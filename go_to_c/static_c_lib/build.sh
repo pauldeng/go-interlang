@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/bash
 CURPATH=$(pwd)
 cd greetings
 rm -Rf build
