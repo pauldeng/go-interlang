@@ -6,3 +6,6 @@ To build the C static library and Go executable, run `make`. Then run
 ## Another similar example
 
 [github.com/shadowmint/go-static-linking](https://github.com/shadowmint/go-static-linking)
+
+mkdir build
+cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ..

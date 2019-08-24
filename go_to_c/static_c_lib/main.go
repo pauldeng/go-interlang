@@ -4,14 +4,13 @@ import "fmt"
 import "unsafe"
 
 // #cgo CFLAGS: -I${SRCDIR}/greetings
-// #cgo LDFLAGS: ${SRCDIR}/greetings.a
+// #cgo LDFLAGS: ${SRCDIR}/greetings/build/liblanguage.a
 // #include <stdlib.h>
 // #include <greetings.h>
 import "C"
 
 func main() {
 	fmt.Printf("Go says: static C library greetings coming..\n")
-
 	john := C.CString("John")
 	defer C.free(unsafe.Pointer(john))
 	johannes := C.CString("Johannes")
