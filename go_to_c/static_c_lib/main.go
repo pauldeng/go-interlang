@@ -15,9 +15,16 @@ func main() {
 	defer C.free(unsafe.Pointer(john))
 	johannes := C.CString("Johannes")
 	defer C.free(unsafe.Pointer(johannes))
+	johnOz := C.CString("JohnOz")
+	defer C.free(unsafe.Pointer(johnOz))
 
 	C.greet_in_english(john)
 	C.greet_in_german(johannes)
+
+        ozReturn := C.greet_in_oz(johnOz)
+        fmt.Printf("Go says: %s\n", C.GoString(ozReturn))
+        C.free(unsafe.Pointer(johnOz))         // free memory right now ...
+        defer C.free(unsafe.Pointer(ozReturn)) // ... or later
 
 	fmt.Printf("Go says bye!\n")
 }
