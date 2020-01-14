@@ -1,11 +1,8 @@
 # Calling a C static library from Go
 
-To build the C static library and Go executable, run `make`. Then run
-`./go_to_c_static` to run the Go program.
+Compiled by the xgo example
 
-## Another similar example
+'''
+xgo -ldflags "-s -w" -out main-exe --targets=linux/mips github.com/pauldeng/go-interlang/go_to_c/xgo_static_c_lib
 
-[github.com/shadowmint/go-static-linking](https://github.com/shadowmint/go-static-linking)
-
-mkdir build
-cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ..
+'''
